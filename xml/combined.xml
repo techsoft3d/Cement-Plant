@@ -1,0 +1,179 @@
+<!--HC 8.2-->
+<Root>
+<ModelFile>
+<ProductOccurence Id="0" Name="combined" Behaviour="1" Children="1" IsPart="false" Unit="1000.000000"/>
+<ProductOccurence Id="1" Name="combined:Master" ExchangeId="" LayerId="65535" Style="65535" Behaviour="1" FilePath="" Children="2 4 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38" IsPart="false"/>
+
+<ProductOccurence Id="2" Name="Control-Feed-Silo" ExchangeId="" LayerId="65535" Style="65535" Behaviour="1" FilePath="" InstanceRef="3" IsPart="false">
+<Transformation RelativeTransfo="1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1"/>
+</ProductOccurence>
+<ProductOccurence Id="3" Name="" ExchangeId="" Behaviour="1" IsPart="false">
+<ExternalModel Name="Control-Feed-Silo-and-Kiln-Feed-new" Unit="1000.000000">
+<BoundingBox Min="218363.640625 99261.109375 -201.58123779296875" Max="471692.75 300715.375 147078.421875"/>
+</ExternalModel>
+</ProductOccurence>
+
+<ProductOccurence Id="4" Name="Cooler" ExchangeId="" LayerId="65535" Style="65535" Behaviour="1" FilePath="" InstanceRef="5" IsPart="false">
+<Transformation RelativeTransfo="1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1"/>
+</ProductOccurence>
+<ProductOccurence Id="5" Name="" ExchangeId="" Behaviour="1" IsPart="false">
+<ExternalModel Name="Cooler-new" Unit="1000.000000">
+<BoundingBox Min="5256825.274999999 2521232.1781249996 -5080" Max="13645951.5625 7638170.524999999 1338128.5546875"/>
+</ExternalModel>
+</ProductOccurence>
+
+<ProductOccurence Id="6" Name="Pan-Conveyor" ExchangeId="" LayerId="65535" Style="65535" Behaviour="1" FilePath="" InstanceRef="7" IsPart="false">
+<Transformation RelativeTransfo="1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1"/>
+</ProductOccurence>
+<ProductOccurence Id="7" Name="" ExchangeId="" Behaviour="1" IsPart="false">
+<ExternalModel Name="Clinker-Silo-new" Unit="1000.000000">
+<BoundingBox Min="5219728 2521232.1781249996 -17780" Max="13645951.5625 7638170.524999999 1749026.934375"/>
+</ExternalModel>
+</ProductOccurence>
+
+<ProductOccurence Id="8" Name="Mill-Hoppers" ExchangeId="" LayerId="65535" Style="65535" Behaviour="1" FilePath="" InstanceRef="9" IsPart="false">
+<Transformation RelativeTransfo="1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1"/>
+</ProductOccurence>
+<ProductOccurence Id="9" Name="" ExchangeId="" Behaviour="1" IsPart="false">
+<ExternalModel Name="Cement-Mill-Hoppers-new" Unit="1000.000000">
+<BoundingBox Min="206961.625 -55890 -5690.5166015625" Max="537242.1875 300715.375 32666.919921875"/>
+</ExternalModel>
+</ProductOccurence>
+
+<ProductOccurence Id="10" Name="Mill-Department" ExchangeId="" LayerId="65535" Style="65535" Behaviour="1" FilePath="" InstanceRef="11" IsPart="false">
+<Transformation RelativeTransfo="1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1"/>
+</ProductOccurence>
+<ProductOccurence Id="11" Name="" ExchangeId="" Behaviour="1" IsPart="false">
+<ExternalModel Name="Cement-Mill-Department-new" Unit="1000.000000">
+<BoundingBox Min="206961.625 69356 -4450.337890625" Max="581562.875 300715.375 50360.89453125"/>
+</ExternalModel>
+</ProductOccurence>
+
+<ProductOccurence Id="12" Name="Pozzolana-Storage" ExchangeId="" LayerId="65535" Style="65535" Behaviour="1" FilePath="" InstanceRef="13" IsPart="false">
+<Transformation RelativeTransfo="1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1"/>
+</ProductOccurence>
+<ProductOccurence Id="13" Name="" ExchangeId="" Behaviour="1" IsPart="false">
+<ExternalModel Name="Pozzolana-Gypsum-and-Additive-Storage-new" Unit="1000.000000">
+<BoundingBox Min="-3031024.8625 -9537976.225 -177596.8" Max="22368975.1375 15862023.774999999 392699.4375"/>
+</ExternalModel>
+</ProductOccurence>
+
+<ProductOccurence Id="14" Name="Coal-Stacker" ExchangeId="" LayerId="65535" Style="65535" Behaviour="1" FilePath="" InstanceRef="15" IsPart="false">
+<Transformation RelativeTransfo="1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1"/>
+</ProductOccurence>
+<ProductOccurence Id="15" Name="" ExchangeId="" Behaviour="1" IsPart="false">
+<ExternalModel Name="Coal-Stacker-Reclaimer-new" Unit="1000.000000">
+<BoundingBox Min="-3031024.8625 -9537976.225 -12416.09375" Max="22368975.1375 15862023.774999999 409567.09375"/>
+</ExternalModel>
+</ProductOccurence>
+
+<ProductOccurence Id="16" Name="ESP-Filters" ExchangeId="" LayerId="65535" Style="65535" Behaviour="1" FilePath="" InstanceRef="17" IsPart="false">
+<Transformation RelativeTransfo="1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1"/>
+</ProductOccurence>
+<ProductOccurence Id="17" Name="" ExchangeId="" Behaviour="1" IsPart="false">
+<ExternalModel Name="Coal-Mill-Department-new" Unit="1000.000000">
+<BoundingBox Min="167262.859375 99261.109375 -400" Max="502379.625 300715.375 145872"/>
+</ExternalModel>
+</ProductOccurence>
+
+<ProductOccurence Id="18" Name="Cement-Silos" ExchangeId="" LayerId="65535" Style="65535" Behaviour="1" FilePath="" InstanceRef="19" IsPart="false">
+<Transformation RelativeTransfo="1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1"/>
+</ProductOccurence>
+<ProductOccurence Id="19" Name="" ExchangeId="" Behaviour="1" IsPart="false">
+<ExternalModel Name="Cement-Silos-new" Unit="1000.000000">
+<BoundingBox Min="206961.625 56395 -200.07981872558594" Max="642266.375 300715.375 61335.20703125"/>
+</ExternalModel>
+</ProductOccurence>
+
+<ProductOccurence Id="20" Name="Packing-Plant" ExchangeId="" LayerId="65535" Style="65535" Behaviour="1" FilePath="" InstanceRef="21" IsPart="false">
+<Transformation RelativeTransfo="1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1"/>
+</ProductOccurence>
+<ProductOccurence Id="21" Name="" ExchangeId="" Behaviour="1" IsPart="false">
+<ExternalModel Name="Cement-Packing-Plant-new" Unit="1000.000000">
+<BoundingBox Min="206961.625 61995 -200.07981872558594" Max="662266.375 300715.375 32239.919921875"/>
+</ExternalModel>
+</ProductOccurence>
+
+<ProductOccurence Id="22" Name="Truck-Loading" ExchangeId="" LayerId="65535" Style="65535" Behaviour="1" FilePath="" InstanceRef="23" IsPart="false">
+<Transformation RelativeTransfo="1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1"/>
+</ProductOccurence>
+<ProductOccurence Id="23" Name="" ExchangeId="" Behaviour="1" IsPart="false">
+<ExternalModel Name="Truck-Loading-new" Unit="1000.000000">
+<BoundingBox Min="206961.625 15897.423828125 -201.58123779296875" Max="748029.125 300715.375 12803.607421875"/>
+</ExternalModel>
+</ProductOccurence>
+
+<ProductOccurence Id="24" Name="Wagon-Loading" ExchangeId="" LayerId="65535" Style="65535" Behaviour="1" FilePath="" InstanceRef="25" IsPart="false">
+<Transformation RelativeTransfo="1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1"/>
+</ProductOccurence>
+<ProductOccurence Id="25" Name="" ExchangeId="" Behaviour="1" IsPart="false">
+<ExternalModel Name="Cement-Wagon-Loading-new" Unit="1000.000000">
+<BoundingBox Min="206961.625 -536000 -202.07983719826825" Max="816090.125 300715.375 16176.619140625"/>
+</ExternalModel>
+</ProductOccurence>
+
+<ProductOccurence Id="26" Name="Wagon-Tippler" ExchangeId="" LayerId="65535" Style="65535" Behaviour="1" FilePath="" InstanceRef="27" IsPart="false">
+<Transformation RelativeTransfo="1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1"/>
+</ProductOccurence>
+<ProductOccurence Id="27" Name="" ExchangeId="" Behaviour="1" IsPart="false">
+<ExternalModel Name="Wagon-Tippler-new" Unit="1000.000000">
+<BoundingBox Min="5256825.274999999 -7487254.043749999 -233674.14609375" Max="20351570 7638170.524999999 906774.6421874999"/>
+</ExternalModel>
+</ProductOccurence>
+
+<ProductOccurence Id="28" Name="Control-Room" ExchangeId="" LayerId="65535" Style="65535" Behaviour="1" FilePath="" InstanceRef="29" IsPart="false">
+<Transformation RelativeTransfo="1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1"/>
+</ProductOccurence>
+<ProductOccurence Id="29" Name="" ExchangeId="" Behaviour="1" IsPart="false">
+<ExternalModel Name="Central-Control-Room-and-Main-Gate-new" Unit="1000.000000">
+<BoundingBox Min="-3033565.0609374996 -13258713 -259120.1587890625" Max="22399256 17292202.525 257075.703125"/>
+</ExternalModel>
+</ProductOccurence>
+
+<ProductOccurence Id="30" Name="Cyclone-Preheater" ExchangeId="" LayerId="65535" Style="65535" Behaviour="1" FilePath="" InstanceRef="31" IsPart="false">
+<Transformation RelativeTransfo="1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1"/>
+</ProductOccurence>
+<ProductOccurence Id="31" Name="" ExchangeId="" Behaviour="1" IsPart="false">
+<ExternalModel Name="Cyclone-Preheater-new" Unit="1000.000000">
+<BoundingBox Min="218363.640625 99261.109375 -200" Max="502379.625 300715.375 145872"/>
+</ExternalModel>
+</ProductOccurence>
+
+<ProductOccurence Id="32" Name="Kiln-Hot-Air-Duct" ExchangeId="" LayerId="65535" Style="65535" Behaviour="1" FilePath="" InstanceRef="33" IsPart="false">
+<Transformation RelativeTransfo="1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1"/>
+</ProductOccurence>
+<ProductOccurence Id="33" Name="" ExchangeId="" Behaviour="1" IsPart="false">
+<ExternalModel Name="Kiln-and-Hot-Air-Duct-new" Unit="1000.000000">
+<BoundingBox Min="5546436.471875 2521232.1781249996 -5092.7001953125" Max="11980995.85 7638170.524999999 967907.6796875"/>
+</ExternalModel>
+</ProductOccurence>
+
+<ProductOccurence Id="34" Name="Limestone-Stockpile" ExchangeId="" LayerId="65535" Style="65535" Behaviour="1" FilePath="" InstanceRef="35" IsPart="false">
+<Transformation RelativeTransfo="1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1"/>
+</ProductOccurence>
+<ProductOccurence Id="35" Name="" ExchangeId="" Behaviour="1" IsPart="false">
+<ExternalModel Name="Limestone-Stockpile-new" Unit="1000.000000">
+<BoundingBox Min="5256825.274999999 1193886.915625 -12416.09375" Max="17615642 17292202.525 643877.3125"/>
+</ExternalModel>
+</ProductOccurence>
+
+<ProductOccurence Id="36" Name="Raw-Mill-Hoppers" ExchangeId="" LayerId="65535" Style="65535" Behaviour="1" FilePath="" InstanceRef="37" IsPart="false">
+<Transformation RelativeTransfo="1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1"/>
+</ProductOccurence>
+<ProductOccurence Id="37" Name="" ExchangeId="" Behaviour="1" IsPart="false">
+<ExternalModel Name="Raw-Mill-Hoppers-new" Unit="1000.000000">
+<BoundingBox Min="5256825.274999999 -1010169.3109375 -144539.1216796875" Max="14159432 7638170.524999999 829739.766015625"/>
+</ExternalModel>
+</ProductOccurence>
+
+<ProductOccurence Id="38" Name="Raw-Mill-Ducting" ExchangeId="" LayerId="65535" Style="65535" Behaviour="1" FilePath="" InstanceRef="39" IsPart="false">
+<Transformation RelativeTransfo="1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1"/>
+</ProductOccurence>
+<ProductOccurence Id="39" Name="" ExchangeId="" Behaviour="1" IsPart="false">
+<ExternalModel Name="Raw-Mill-Ducting-Complex-and-Gas-Conditioning-new" Unit="1000.000000">
+<BoundingBox Min="218363.640625 99261.109375 -199.6950225830078" Max="511557.8125 300715.375 66355.3046875"/>
+</ExternalModel>
+</ProductOccurence>
+
+</ModelFile>
+</Root>
