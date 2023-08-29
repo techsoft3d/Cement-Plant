@@ -48,3 +48,67 @@ async function startViewer(modelName, uid) {
         return [viewer, data];
 
 }
+
+async function fetchVersionNumber() {
+        const conversionServiceURI = "https://csapi.techsoft3d.com";
+
+        let res = await fetch(conversionServiceURI + '/api/hcVersion');
+        var data = await res.json();
+        versionNumer = data;
+        
+        return data
+
+}
+
+
+
+async function initializeViewer() {
+        var model_uid = ""
+
+        let result = await startViewer(Communicator.EmptyModelName, model_uid)
+    
+    
+        viewer = result[0]
+        var data = result[1]
+    
+        const uiConfig = {
+          containerId: "content",
+          screenConfiguration: Sample.screenConfiguration,
+        }
+        const ui = new Communicator.Ui.Desktop.DesktopUi(viewer, uiConfig);
+    
+        viewer.setCallbacks({
+          sceneReady: function () {
+            snapToView(0)
+            viewer.model.setEnableAutomaticUnitScaling(false)
+            $(".dropdown").css('display', 'inline-block');
+            viewer.getView().setProjectionMode(Communicator.Projection.Perspective);
+            document.getElementById("dropdown").style.opacity = 0.5
+            document.getElementById('dropdown').style.pointerEvents = 'none'
+            document.getElementById("modelBrowserWindow").style.visibility = 'hidden'
+            viewer.selectionManager.setNodeSelectionColor(Communicator.Color.createFromFloat(0, 144, 208));
+            viewer.view.setPointSize(1, Communicator.PointSizeUnit.ScreenPixels)
+            viewer.view.setBackfacesVisible(true)
+    
+            var op = viewer.operatorManager.getOperator(Communicator.OperatorId.Orbit)
+            op.setOrbitFallbackMode(Communicator.OrbitFallbackMode.CameraTarget)
+    
+            var op = viewer.operatorManager.getOperator(Communicator.OperatorId.Zoom)
+            op.setDollyZoomEnabled(true)
+          },
+          modelStructureReady: function () {
+            viewer.model.loadSubtreeFromXmlFile(viewer.model.getRootNode(), "xml/combined.xml")
+            document.getElementById("dropdown").style.opacity = 1
+            document.getElementById('dropdown').style.pointerEvents = 'auto'
+            viewer.view.setAmbientOcclusionEnabled(true);
+            viewer.view.setDisplayIncompleteFrames(true);
+    
+          },
+        });
+    
+        ;
+        window.onresize = function () { viewer.resizeCanvas(); };
+        if (data.collection_id) {
+          window.onbeforeunload = function () { $.get('/api/delete_collection?collection=' + [data.collection_id]); };
+        }
+}
