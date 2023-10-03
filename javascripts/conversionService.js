@@ -37,7 +37,7 @@ async function startViewer(modelName) {
 
         viewer.start();
 
-        return viewer; //[viewer, data];
+        return viewer; 
 
 }
 
@@ -53,8 +53,7 @@ async function initializeViewer() {
         let result = await startViewer("_empty")
     
     
-        viewer = result//[0]
-        // var data = result[1]
+        viewer = result
     
         const uiConfig = {
           containerId: "content",
