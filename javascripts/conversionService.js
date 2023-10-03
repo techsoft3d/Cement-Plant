@@ -1,41 +1,33 @@
 modelUIDs = [
-        "1be61fc1-b6ab-4a06-812f-d1f225ee179d","aa7377e6-4cfc-4915-aebd-651df0e62038","f204aac5-ac1b-440a-ba5d-85f20f9ac076",
-        "f9781092-7efd-4d0e-a897-d4daf8b412e1",
-        "47478491-0e47-4270-9590-ffc7164df2b3",
-        "f5b9c8bb-a310-4ab0-b405-ace25ed890b5" ,
-        "1d19abf3-c06d-44ea-a9c3-9ac989bd6a22",
-        "8e80c44c-7593-4d99-b110-3c14749bc5b3",
-        "c6ae6232-a2f8-4f4f-801b-b0a2e4b96825",
-        "47a469cf-2cd0-4206-b6db-777f63956e4a",
-        "454372dc-2605-4143-917c-43c12c1fc36d",
-        "230ce4e4-103e-42f0-9b7d-b8d3d1d6faf4",
-        "6db017dd-e37b-480a-8d29-3cbd33be5019",
-        "0d5a3249-7e31-458b-89a5-8037379fe6f7",
-        "00f31b86-d8fa-48b3-80cd-d4cc19faf6ce",
-        "a076e40b-2935-4005-9d29-90bb716f32d2",
-        "337cedf7-c547-4719-bfc0-4833da0c254e",
-        "6d245164-aaef-4339-9246-1fe2127cc6a3",
-        "17828854-c048-4c84-b9b2-21058647dcb8",
+       "e2a49aae-f9d3-4d90-b0f3-3b69c637f8ed",
+       "504901e8-4161-48a7-9d64-41d43347f852",
+        "45646083-d0b3-4b70-969e-bc743238a0c9",
+        "3d298a06-7c00-4a21-b90e-34ff21b55ed1",
+        "9a293aea-e835-438e-a75e-8aa0e48600f0",
+        "68f51574-40a7-4072-a48c-297793110510",
+        "1fb347d0-b0c1-4e1e-9e6a-ac780c049260",
+        "7979d581-af5d-4d9c-b8ce-9334fd58cf8f",
+        "dbe39358-50aa-4470-a3e6-a70daa01e385",
+        "25625a91-676d-492f-997b-cdaac8efd32f",
+        "5fde8a5e-69d5-423e-99c4-0041b49d20cd",
+        "9b4d7299-f512-4639-ae83-7bc70b56a06c",
+        "3b73fe82-2def-4eb3-a03c-60ae64869602",
+        "349114ff-38f3-45fe-9882-f7f2ae7c56e5",
+        "8a5cf08b-559f-4e47-96f2-4b3619bfaa43",
+        "417fdd5d-9cdd-460a-acca-60c97a7397bb",
+        "097763f3-8def-4f73-9d06-6c315aeddc58",
+        "509f9076-4ebd-4aef-a90f-3a884307b721",
+        "31f6d934-6e3c-4280-aa67-523a33eba286"
 ]
 
-async function startViewer(modelName, uid) {
-        const conversionServiceURI = "https://csapi.techsoft3d.com";
-
+async function startViewer(modelName) {
         var viewer;
-
-        let res = await fetch(conversionServiceURI + '/api/streamingSession');
-        var data = await res.json();
-        var endpointUriBeginning = 'ws://';
-
-        if(conversionServiceURI.substring(0, 5).includes("https")){
-                endpointUriBeginning = 'wss://'
-        }
-
-        await fetch(conversionServiceURI + '/api/enableStreamAccess/' + data.sessionid, { method: 'put', headers: { 'items': JSON.stringify(modelUIDs) } });
+        let sessioninfo = await caasClient.getStreamingSession();
+        await caasClient.enableStreamAccess(sessioninfo.sessionid, modelUIDs);
 
         viewer = new Communicator.WebViewer({
                 containerId: "viewerContainer",
-                endpointUri: endpointUriBeginning + data.serverurl + ":" + data.port + '?token=' + data.sessionid,
+                endpointUri: sessioninfo.endpointUri,
                 model: modelName,
                 streamingMode: Communicator.StreamingMode.OnDemand,
                 boundingPreviewMode: Communicator.BoundingPreviewMode.All,
@@ -45,31 +37,24 @@ async function startViewer(modelName, uid) {
 
         viewer.start();
 
-        return [viewer, data];
+        return viewer; //[viewer, data];
 
 }
 
 async function fetchVersionNumber() {
-        const conversionServiceURI = "https://csapi.techsoft3d.com";
-
-        let res = await fetch(conversionServiceURI + '/api/hcVersion');
-        var data = await res.json();
-        versionNumer = data;
-        
+        let data = await caasClient.getHCVersion();
+        versionNumer = data;        
         return data
-
 }
-
-
-
+  
 async function initializeViewer() {
         var model_uid = ""
 
-        let result = await startViewer(Communicator.EmptyModelName, model_uid)
+        let result = await startViewer("_empty")
     
     
-        viewer = result[0]
-        var data = result[1]
+        viewer = result//[0]
+        // var data = result[1]
     
         const uiConfig = {
           containerId: "content",
@@ -108,7 +93,7 @@ async function initializeViewer() {
     
         ;
         window.onresize = function () { viewer.resizeCanvas(); };
-        if (data.collection_id) {
-          window.onbeforeunload = function () { $.get('/api/delete_collection?collection=' + [data.collection_id]); };
-        }
+        // if (data.collection_id) {
+        //   window.onbeforeunload = function () { $.get('/api/delete_collection?collection=' + [data.collection_id]); };
+        // }
 }
